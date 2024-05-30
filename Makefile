@@ -13,9 +13,9 @@ test-py-pytest:
 	pytest
 
 install-release:
-	pip install maturin
+	pip install -r requirements.txt
 	maturin develop -m python_tif/Cargo.toml -r
 
 install-dev:
-	pip install maturin pytest ipython
+	pip install -r requirements-dev.txt
 	maturin develop -m python_tif/Cargo.toml
