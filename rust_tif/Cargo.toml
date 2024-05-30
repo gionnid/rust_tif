@@ -8,4 +8,5 @@ name = "rust_tif"
 path = "src/rust_lib.rs"
 
 [dependencies]
-gdal = "0.15.0"
+gdal = { version = "0.15.0", features = ["array"] }
+ndarray = { version = "0.15.6" }
