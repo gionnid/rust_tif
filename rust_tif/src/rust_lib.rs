@@ -1,7 +1,7 @@
 use gdal::Dataset;
 use gdal::raster::ResampleAlg;
 
-fn get_mean_of_band_1(geotiff_path: &str) -> u64 {
+pub fn get_mean_of_band_1(geotiff_path: &str) -> u64 {
     let dataset = Dataset::open(geotiff_path).unwrap();
     let band = dataset.rasterband(1).unwrap();
 
@@ -16,8 +16,6 @@ fn get_mean_of_band_1(geotiff_path: &str) -> u64 {
 
     mean
 }
-
-fn main() {}
 
 #[cfg(test)]
 mod tests {

@@ -1,0 +1,14 @@
+[package]
+name = "python_tif"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "python_tif"
+crate-type = ["cdylib"]
+
+[dependencies]
+rust_tif = { path = "/home/gionni/GitHub/rust_tif/rust_tif/" }
+ndarray = { version = "0.15.6" }
+pyo3 = { version = "0.21.2", features = ["extension-module"] }
+numpy = { version = "0.21.0" }
