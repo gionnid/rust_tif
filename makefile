@@ -1,6 +1,9 @@
+# VARIABLES
+RUST_TOML_DIR := ./rust_tif/Cargo.toml
 
-run:
-	cargo run
 
-test:
-	cd assets; ../target/debug/rust_tif
+run-rust:
+	cargo run --manifest-path $(RUST_TOML_DIR)
+
+test-rust:
+	cargo test --manifest-path $(RUST_TOML_DIR)

@@ -1,5 +1,4 @@
 use gdal::Dataset;
-use gdal::raster::RasterBand;
 use gdal::raster::ResampleAlg;
 
 fn get_mean_of_band_1(geotiff_path: &str) -> u64 {
@@ -26,7 +25,7 @@ mod tests {
 
     #[test]
     fn test_base() {
-        let tested_mean: u64 = get_mean_of_band_1("assets/image.tif");
+        let tested_mean: u64 = get_mean_of_band_1("../assets/image.tif");
         let ref_value: u64 = 15810534;
 
         assert!(tested_mean == ref_value);
@@ -35,7 +34,7 @@ mod tests {
     #[test]
     #[should_panic]
     fn test_base_2() {
-        let tested_mean: u64 = get_mean_of_band_1("wrong_path.tif");
+        let tested_mean: u64 = get_mean_of_band_1("wrong_path_1232.tif");
         let ref_value: u64 = 15810534;
 
         assert!(tested_mean == ref_value);
