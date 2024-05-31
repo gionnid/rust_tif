@@ -22,6 +22,13 @@ fn python_tif(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
         array.into_dyn().into_pyarray_bound(_py)
     }
 
+    #[pyfn(m)]
+    fn get_bbox<'a>(_py: Python<'a>, geotiff_path: &str) -> [f64; 4] {
+        let bbox: [f64; 4] = rust_tif::get_bbox(geotiff_path);
+
+        bbox
+    }
+
     Ok(())
 }
 
